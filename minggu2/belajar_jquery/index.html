@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>belajar jquery</title>
+    <script>
+        $(function() {
+            console.log('belajar jquery pertama kali');
+
+            // selector
+            // tanpa id
+            // $("button").click(function() {
+            //     console.log('button tanpa id ini saya klik');
+            // });
+
+            // dengan id
+            $("#button").click(function() {
+
+                $(".tulisan").text("harap tunggu..");
+
+                // mengambil data dengan ajax
+                $.ajax({
+                    method: "GET",
+                    url: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood",
+                    
+                    })
+                    .done(function( msg ) {
+                        // konversi object menjadi array
+                        let meals = msg.meals;
+                        console.log();
+                        
+                        // memasukkan data ke id "data"
+                        // let isiData = meals[0].strMeal + "<img src='"+ meals[0].strMealThumb +"'>";
+
+                        let isiData = ` <table>
+                                            <tr>
+                                                <th></th>
+                                            </tr>`;
+
+                        // menampilkan banyak data
+                        $.each(meals, function(index) {
+                            isiData += `<tr>
+                                            <th>${meals[index].strMeal}<br><img src="${meals[index].strMealThumb}" width="300" height="300"></th>
+                                        </tr>`;
+                        });
+                        
+                        $('.data').html(`${isiData} </table>`);
+                       
+                        console.log('data berhasil ditampikan');
+
+                });
+            });
+        });    
+
+    </script>
+</head>
+<body>
+    <!-- <button>button tanpa id</button>
+    <p>paragraf tanpa id</p> -->
+    <button id="button">button dengan id</button>
+    <p id="paragraf">Food List</p>
+    <div class="data"></div>
+    <p class="tulisan"></p>
+</body>
+</html>
