@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Web Resep</title>
+    <style>
+        .nav .web-resep {
+            display: none;
+        }
+
+        .nav #icon {
+			display: none;
+			width: 30px;
+            background-color: #6B21A8;
+            padding: 2px;
+            box-sizing: border-box;
+		}
+
+        /*ver mobile*/
+		.nav-list-mobile {
+			display: none;
+			background-color: white;
+			padding: 10px 20px;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 14px;
+			color: #6B21A8;
+			position: fixed;
+			width: 100%;
+            box-shadow: 0 3px 5px lightgrey;
+		}
+
+		.nav-list-mobile ul li {
+			line-height: 35px;
+			list-style: none;
+		}
+
+		/*responsive*/
+		@media screen and (max-width: 600px) {
+            .nav {
+                position: sticky;
+                top: 0;
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                box-shadow: 0 3px 5px lightgrey;
+            }
+
+            .nav .web-resep {
+                display: block;
+            }
+
+			.nav ul {
+				display: none;
+			}
+
+			.nav #icon {
+				display: block;
+			}	
+		}
+
+		/* @media screen and (max-width: 400px) {
+			nav .heading h1 {
+				font-size: 18px;
+			}
+		} */
+
+    </style>
+</head>
+<body>
+    <!-- navigasi -->
+    <div class="nav p-4">
+        <h1 class="web-resep text-lg font-semibold tracking-wide">Web Resep</h1>
+        <ul class="flex justify-between w-2/4 p-2 mx-auto">
+            <a href="../home.html"><li class="px-5 py-1 text-purple-800 font-semibold hover:text-purple-900 hover:underline">Home</li></a>
+            <a href="../resep.html"><li class="border px-6 py-1 rounded-md bg-purple-800 text-neutral-50 font-semibold border-purple-800 border-purple-800 hover:bg-purple-900 hover:border-purple-900">Resep</li></a>
+            <a href="../tentang_kami.html"><li class="px-5 py-1 text-purple-800 font-semibold text-purple-900 hover:underline">Tentang Kami</li></a>
+        </ul>
+        <img src="../logo/hamburger_icon.png" alt="hamburger_icon" id="icon" class="rounded-md">
+    </div>
+
+    <!-- mobile navigasi link -->
+	<div class="nav-list-mobile">
+		<ul>
+			<a href="../home.html"><li class="px-5 py-1 text-purple-800 font-semibold hover:text-purple-900 hover:underline">Home</li></a>
+            <a href="../resep.html"><li class="border px-6 py-1 rounded-md bg-purple-800 text-neutral-50 font-semibold border-purple-800 border-purple-800 hover:bg-purple-900 hover:border-purple-900">Resep</li></a>
+            <a href="../tentang_kami.html"><li class="px-5 py-1 text-purple-800 font-semibold text-purple-900 hover:underline">Tentang Kami</li></a>
+		</ul>
+	</div>
+
+    <!-- container -->
+    <div class="container w-3/5 mx-auto">
+        <!-- text judul -->
+        <div class="judul mt-10 mb-5">
+            <p class="font-semibold text-3xl sm:text-4xl">Resep Masakan 8</p>
+        </div>
+         <!-- cover / header -->
+        <div class="header-cover w-auto h-52 sm:h-96 mx-auto bg-cover bg-center mb-7" 
+        style="background-image: url(../img/dmitriy-zub-YIqRN-tBTiU-unsplash.jpg);">
+        </div>
+        <!-- komposisi -->
+        <div class="komposisi">
+            <div class="wrap">
+                <div class="bahan">
+                    <div class="title-bahan">
+                        <p class="font-semibold text-lg">Bahan :</p>
+                    </div>
+                    <div class="desc text-justify w-auto sm:w-3/4">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Sodales sit non laoreet congue ac mauris. Velit 
+                        arcu pulvinar nisl lectus faucibus in volutpat aenean. 
+                        Posuere sagittis vitae amet egestas. Eget quisque diam 
+                        sagittis suspendisse sed eget.</p>
+                    </div>
+                </div>
+                <div class="pengelolaan mt-10">
+                    <div class="title-pengelolaan">
+                        <p class="font-semibold text-lg">Pengelolaan :</p>
+                    </div>
+                    <div class="desc text-justify w-auto sm:w-3/4">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Sodales sit non laoreet congue ac mauris. Velit 
+                        arcu pulvinar nisl lectus faucibus in volutpat aenean. 
+                        Posuere sagittis vitae amet egestas. Eget quisque diam 
+                        sagittis suspendisse sed eget.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer text-center text-purple-800 font-semibold mt-40 mb-20">
+        <p>adjimuhamadzidan @ 2022</p>
+    </div>
+
+    <script>
+		// memanggil icon gambar
+		let iconHamb = document.getElementById('icon');
+		iconHamb.onclick = function() {
+
+			// memanggil list navigasi mobile
+			let navbar = document.getElementsByClassName('nav-list-mobile')[0];
+
+			// jika icon ditekan (menampilkan link nav)
+			if(navbar.style.display === "none") {
+		    	navbar.style.display = "block";
+		    } 
+
+		    // jika icon ditekan lagi (menyembunyikan link nav)
+		    else {
+		        navbar.style.display = "none";
+		    }
+		}
+		
+	</script>
+</body>
+</html>

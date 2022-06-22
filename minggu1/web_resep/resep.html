@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Web Resep</title>
+    <style>
+        .nav .web-resep {
+            display: none;
+        }
+
+        .nav #icon {
+			display: none;
+			width: 30px;
+            background-color: #6B21A8;
+            padding: 2px;
+            box-sizing: border-box;
+		}
+
+        /*ver mobile*/
+		.nav-list-mobile {
+			display: none;
+			background-color: white;
+			padding: 10px 20px;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 14px;
+			color: #6B21A8;
+			position: fixed;
+			width: 100%;
+            box-shadow: 0 3px 5px lightgrey;
+		}
+
+		.nav-list-mobile ul li {
+			line-height: 35px;
+			list-style: none;
+		}
+
+		/*responsive*/
+		@media screen and (max-width: 600px) {
+            .nav {
+                position: sticky;
+                top: 0;
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                box-shadow: 0 3px 5px lightgrey;
+                z-index: 100;
+            }
+
+            .nav .web-resep {
+                display: block;
+            }
+
+			.nav ul {
+				display: none;
+			}
+
+			.nav #icon {
+				display: block;
+			}	
+		}
+
+		/* @media screen and (max-width: 400px) {
+			nav .heading h1 {
+				font-size: 18px;
+			}
+		} */
+
+    </style>
+</head>
+<body>
+    <!-- navigasi -->
+    <div class="nav p-4">
+        <h1 class="web-resep text-lg font-semibold tracking-wide">Web Resep</h1>
+        <ul class="flex justify-between w-2/4 p-2 mx-auto">
+            <a href="home.html"><li class="px-5 py-1 text-purple-800 font-semibold hover:text-purple-900 hover:underline">Home</li></a>
+            <a href="resep.html"><li class="border px-6 py-1 rounded-md bg-purple-800 text-neutral-50 font-semibold border-purple-800 border-purple-800 hover:bg-purple-900 hover:border-purple-900">Resep</li></a>
+            <a href="tentang_kami.html"><li class="px-5 py-1 text-purple-800 font-semibold text-purple-900 hover:underline">Tentang Kami</li></a>
+        </ul>
+        <img src="logo/hamburger_icon.png" alt="hamburger_icon" id="icon" class="rounded-md">
+    </div>
+
+    <!-- mobile navigasi link -->
+	<div class="nav-list-mobile">
+		<ul>
+			<a href="home.html"><li class="px-5 py-1 text-purple-800 font-semibold hover:text-purple-900 hover:underline">Home</li></a>
+            <a href="resep.html"><li class="border px-6 py-1 rounded-md bg-purple-800 text-neutral-50 font-semibold border-purple-800 border-purple-800 hover:bg-purple-900 hover:border-purple-900">Resep</li></a>
+            <a href="tentang_kami.html"><li class="px-5 py-1 text-purple-800 font-semibold text-purple-900 hover:underline">Tentang Kami</li></a>
+		</ul>
+	</div>
+
+    <!-- container -->
+    <div class="container w-3/5 mx-auto">
+        <!-- cover / header -->
+        <div class="header-cover w-auto h-60 mx-auto bg-cover bg-center mb-12 mt-8 flex justify-center items-center sm:mt-2" 
+        style="background-image: url(img/eaters-collective-12eHC6FxPyg-unsplash.jpg);">
+        <h1 class="text-3xl text-white font-semibold subpixel-antialiased tracking-wide px-4 box-sizing">Resep Masakan Lainnya</h1>
+        </div>
+        <!-- section -->
+        <div class="section flex justify-center mx-auto flex-wrap sm:justify-between">
+             <!-- resep 1 -->
+            <div class="list-resep-1 w-52">
+                <a href="list_resep_2/list_resep_1.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/daniel-horvath-306TeIlJgAI-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 1</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 2 -->
+            <div class="list-resep-2 w-52">
+                <a href="list_resep_2/list_resep_2.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/oksana-melnychuk-_LHLl4gnEtk-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 2</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 3 -->
+            <div class="list-resep-3 w-52">
+                <a href="list_resep_2/list_resep_3.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/bundo-kim-pVOJl4J3W0k-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 3</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 4 -->
+            <div class="list-resep-4 w-52">
+                <a href="list_resep_2/list_resep_4.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/goodeats-yqr-OzO74SnD8R4-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 4</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 5 -->
+            <div class="list-resep-5 w-52">
+                <a href="list_resep_2/list_resep_5.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/charlesdeluvio-PqsImnjuElM-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 5</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 6 -->
+            <div class="list-resep-6 w-52">
+                <a href="list_resep_2/list_resep_6.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/charlesdeluvio-wrfO9SWykdE-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 6</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 7 -->
+            <div class="list-resep-7 w-52">
+                <a href="list_resep_2/list_resep_7.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/nathan-dumlao-0dqLSBDEcdg-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 7</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 8 -->
+            <div class="list-resep-8 w-52">
+                <a href="list_resep_2/list_resep_8.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/dmitriy-zub-YIqRN-tBTiU-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 8</p>
+                    </div>
+                </a>
+            </div>
+             <!-- resep 9 -->
+            <div class="list-resep-9 w-52">
+                <a href="list_resep_2/list_resep_9.html">
+                    <div class="gambar bg-cover bg-center h-52 hover:brightness-75" 
+                    style="background-image: url(img/nathan-dumlao-JVuFQ19dtEo-unsplash.jpg);">
+                    </div>
+                    <div class="judul py-4">
+                        <p class="font-bold">Resep Masakan 9</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer text-center text-purple-800 font-semibold mt-40 mb-20">
+        <p>adjimuhamadzidan @ 2022</p>
+    </div>
+
+    <script>
+		// memanggil icon gambar
+		let iconHamb = document.getElementById('icon');
+		iconHamb.onclick = function() {
+
+			// memanggil list navigasi mobile
+			let navbar = document.getElementsByClassName('nav-list-mobile')[0];
+
+			// jika icon ditekan (menampilkan link nav)
+			if(navbar.style.display === "none") {
+		    	navbar.style.display = "block";
+		    } 
+
+		    // jika icon ditekan lagi (menyembunyikan link nav)
+		    else {
+		        navbar.style.display = "none";
+		    }
+		}
+		
+	</script>
+</body>
+</html>
