@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    <img src="loading.gif" id="loading">
+    <img src="loading/loading.gif" id="loading">
     <!-- navigasi -->
     <div class="nav p-4">
         <h1 class="web-resep text-lg font-semibold tracking-wide">Web Resep</h1>
@@ -186,7 +186,6 @@
                     if( meal['strIngredient'+ index] === "") break;
 
                     //jika ada, maka masukkan kedalam variabel "bahan"
-
                     bahan += meal['strIngredient'+ index] +" "+ meal['strMeasure'+ index] + "<br/>";
 
                 }
